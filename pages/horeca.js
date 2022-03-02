@@ -1,17 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useRouter } from "next/router";
 import DefaultLayout from "../components/DefaultLayout";
 import styles from "../styles/Home.module.css";
 import useTranslation from "next-translate/useTranslation";
-import {
-  FContainer,
-  FleftSide,
-  FrightSide,
-  FSection,
-} from "../elements/elements";
 
-export default function Home() {
+export default function Horeca() {
   let { t } = useTranslation();
   return (
     <div className={styles.container}>
@@ -23,15 +15,7 @@ export default function Home() {
 
       <DefaultLayout>
         <main className={styles.main}>
-          <FSection>
-            <FContainer>
-              <FleftSide>
-                <h1 className={styles.title}>{t("common:greeting")}</h1>
-                <p>hello</p>
-              </FleftSide>
-              <FrightSide>Right Side</FrightSide>
-            </FContainer>
-          </FSection>
+          <h1 className={styles.title}>{t("common:greeting")}</h1>
         </main>
       </DefaultLayout>
     </div>
