@@ -75,16 +75,27 @@ const Container = styled.div`
   flex-direction: ${({ flexdirection }) => flexdirection};
   text-align: ${({ textalign }) => textalign};
   flex-wrap: wrap;
+  justify-content: ${({ justifycontent }) => justifycontent};
+  align-items: ${({ alignitems }) => alignitems};
   @media (max-width: 991px) {
     flex-direction: column;
   }
 `;
-export const FContainer = ({ children, style, flexdirection, textalign }) => {
+export const FContainer = ({
+  children,
+  style,
+  flexdirection,
+  textalign,
+  justifycontent,
+  alignitems,
+}) => {
   return (
     <Container
       style={style}
       flexdirection={flexdirection}
       textalign={textalign}
+      justifycontent={justifycontent}
+      alignitems={alignitems}
     >
       {children}
     </Container>
@@ -98,6 +109,19 @@ const ContainerFluid = styled.div`
 `;
 export const FContainerFluid = ({ children, style }) => {
   return <ContainerFluid style={style}>{children}</ContainerFluid>;
+};
+
+// Paragraph component
+const Paragraph = styled.div`
+  text-align: ${({ textalign }) => textalign};
+  width: 100%;
+`;
+export const FParagraph = ({ children, style, textalign }) => {
+  return (
+    <Paragraph style={style} textalign={textalign}>
+      {children}
+    </Paragraph>
+  );
 };
 
 // Left and Right side container
