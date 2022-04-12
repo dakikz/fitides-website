@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { colors } from "../config/genericStyles";
 import { LogoBrown } from "../config/images";
 import { FContainer, FImageOuter } from "../elements/elements";
@@ -51,6 +52,26 @@ const Footer = () => {
           3 Rodionos K. Riga CY-4101, INDUSTRIAL AREA AGIOS ATHANASIOS, LIMASSOL
         </p>
         <p>P.O.BOX 55231-3820 LIMASSOL</p>
+        <div style={{ marginTop: "20px", display: "flex", gap: "5px" }}>
+          <Link
+            href={{
+              pathname: "https://www.instagram.com/fitides__pittabread/",
+            }}
+          >
+            <a target="_blank">
+              <FaInstagram color={colors.brown} size={"25px"} />
+            </a>
+          </Link>
+          <Link
+            href={{
+              pathname: "https://www.facebook.com/fitides",
+            }}
+          >
+            <a target="_blank">
+              <FaFacebookF color={colors.brown} size={"25px"} />
+            </a>
+          </Link>
+        </div>
         <p style={{ marginTop: "25px" }}>
           @{new Date().getFullYear()}. All Rights Reserved
         </p>

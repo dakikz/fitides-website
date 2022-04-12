@@ -257,8 +257,8 @@ export const FrightSide = ({ children, style, justifycontent }) => {
 
 // Buttons
 const Button = styled.div`
-  border: 1px solid ${colors.brown};
-  background-color: ${colors.brown};
+  border: 2px solid ${({ colorz }) => colorz};
+  background-color: ${({ colorz }) => colorz};
   border-radius: 50px;
   padding: 8px 10px;
   color: ${colors.white};
@@ -266,9 +266,15 @@ const Button = styled.div`
   max-width: 200px;
   width: 100%;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: ${colors.white};
+    color: ${({ colorz }) => colorz};
+  }
 `;
-export const FButtonBrown = ({ isButton }) => {
-  return <Button>{isButton}</Button>;
+export const FButtonBrown = ({ isButton, colorz }) => {
+  return <Button colorz={colorz}>{isButton}</Button>;
 };
 
 // Image outer container

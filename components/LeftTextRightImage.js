@@ -45,8 +45,8 @@ const LeftTextRightImage = ({
           <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
           {isButton && (
             <CTAsection>
-              <FButtonBrown isButton={"Horeca"} />
-              <FButtonBrown isButton={"Retail"} />
+              <FButtonBrown colorz={colors.brown} isButton={"Horeca"} />
+              <FButtonBrown colorz={colors.gold} isButton={"Retail"} />
             </CTAsection>
           )}
         </FContainer>

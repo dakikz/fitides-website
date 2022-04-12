@@ -35,7 +35,9 @@ export default function Home() {
           >
             <FContainer></FContainer>
           </FSection>
-          <FContainerFluid style={{ minHeight: "500px" }}>
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
             <LeftTextRightImage
               titleContent={t("common:homepage.marketNeeds")}
               paragraphContent1={t("common:homepage.marketNeedsP1")}
@@ -43,7 +45,9 @@ export default function Home() {
               imageBg={HpTrucks}
             />
           </FContainerFluid>
-          <FContainerFluid style={{ minHeight: "500px" }}>
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
             <RightTextLeftImage
               titleContent={t("common:homepage.solutionIs")}
               paragraphContent1={t("common:homepage.solutionIsP1")}
@@ -51,7 +55,9 @@ export default function Home() {
               imageBg={HpGreekPitta}
             />
           </FContainerFluid>
-          <FContainerFluid style={{ minHeight: "500px" }}>
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
             <LeftTextRightImage
               titleContent={t("common:homepage.ourApproach")}
               paragraphContent1={t("common:homepage.ourApproachP1")}
@@ -60,7 +66,9 @@ export default function Home() {
               isButton={"nai button"}
             />
           </FContainerFluid>
-          <FContainerFluid style={{ minHeight: "500px" }}>
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
             <RightTextLeftImage
               titleContent={t("common:homepage.solutionIs")}
               paragraphContent1={t("common:homepage.solutionIsP1")}
@@ -68,7 +76,9 @@ export default function Home() {
               imageBg={HpCocktailPitta}
             />
           </FContainerFluid>
-          <FContainerFluid style={{ minHeight: "500px" }}>
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
             <LeftTextRightImage
               titleContent={t("common:homepage.whyDifferent")}
               paragraphContent1={t("common:homepage.whyDifferentP1")}

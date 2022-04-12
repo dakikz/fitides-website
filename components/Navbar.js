@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { colors, heights } from "../config/genericStyles";
 import { LogoGold } from "../config/images";
 import { FImageOuter } from "../elements/elements";
-import styles from "../styles/Navigation.module.css";
 
 const NavbarOuter = styled.nav`
   background-color: ${colors.black};
@@ -16,6 +15,15 @@ const NavbarOuter = styled.nav`
   position: sticky;
   top: 0;
   z-index: 99;
+  @media (max-width: 991px) {
+    height: 100vh;
+  }
+`;
+const CloseMobMenu = styled.div`
+  color: ${colors.brown};
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 const NavbarInner = styled.div`
   display: flex;
@@ -25,6 +33,15 @@ const NavbarInner = styled.div`
   max-width: 1140px;
   margin: auto;
   padding: 0 15px;
+  background-color: ${colors.black};
+  @media (max-width: 991px) {
+    width: 100%;
+    position: fixed;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+  }
 `;
 const NavLinks = styled.div`
   display: flex;
@@ -35,6 +52,14 @@ const NavLinks = styled.div`
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 500;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+    & .hi {
+      margin: 4px auto;
+    }
+  }
   & .hi {
     border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
@@ -54,9 +79,12 @@ const LangLi = styled.li`
   color: ${colors.gold};
 `;
 const Navbar = ({ navItems }) => {
+  const [isMobMenuOpen, setIsMobMenuOpen] = useState(false);
   let router = useRouter();
+
   return (
-    <NavbarOuter>
+    <NavbarOuter className={isMobMenuOpen ? "aaaaa" : ""}>
+      <CloseMobMenu onClick={() => setIsMobMenuOpen(false)}>X</CloseMobMenu>
       <NavbarInner>
         <Link href="/">
           <a>
