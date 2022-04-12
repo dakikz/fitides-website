@@ -7,4 +7,5 @@ export const HpHeroOpacity = "/images/hp-hero.png";
 export const HpTrucks = "/images/hp-trucks.jpg";
 export const HpGreekPitta = "/images/hp-greek-pitta.jpg";
 export const HpLogoEngraved = "/images/hp-logo-engraved.jpg";
+export const HpCocktailPitta = "/images/hp-cocktail-pitta.jpg";
 export const HpNewspaper = "/images/hp-newspaper.jpg";

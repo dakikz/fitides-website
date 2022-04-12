@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
+import styled from "styled-components";
 import { colors } from "../config/genericStyles";
-import { HpTrucks } from "../config/images";
 import {
+  FButtonBrown,
   FContainer,
   Fh2Title,
   FImageOuter,
@@ -11,11 +12,19 @@ import {
   FrightSide,
 } from "../elements/elements";
 
+const CTAsection = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+`;
+
 const LeftTextRightImage = ({
   titleContent,
   paragraphContent1,
   paragraphContent2,
   imageBg,
+  isButton,
 }) => {
   return (
     <>
@@ -34,6 +43,12 @@ const LeftTextRightImage = ({
             {paragraphContent1}
           </FParagraph>
           <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
+          {isButton && (
+            <CTAsection>
+              <FButtonBrown isButton={"Horeca"} />
+              <FButtonBrown isButton={"Retail"} />
+            </CTAsection>
+          )}
         </FContainer>
       </FleftSide>
       <FrightSide>

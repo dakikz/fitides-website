@@ -5,6 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 import { FContainer, FContainerFluid, FSection } from "../elements/elements";
 import { colors } from "../config/genericStyles";
 import {
+  HpCocktailPitta,
   HpGreekPitta,
   HpHeroOpacity,
   HpLogoEngraved,
@@ -56,6 +57,15 @@ export default function Home() {
               paragraphContent1={t("common:homepage.ourApproachP1")}
               paragraphContent2={t("common:homepage.ourApproachP2")}
               imageBg={HpLogoEngraved}
+              isButton={"nai button"}
+            />
+          </FContainerFluid>
+          <FContainerFluid style={{ minHeight: "500px" }}>
+            <RightTextLeftImage
+              titleContent={t("common:homepage.solutionIs")}
+              paragraphContent1={t("common:homepage.solutionIsP1")}
+              paragraphContent2={t("common:homepage.solutionIsP2")}
+              imageBg={HpCocktailPitta}
             />
           </FContainerFluid>
           <FContainerFluid style={{ minHeight: "500px" }}>
