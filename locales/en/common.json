@@ -1,3 +1,17 @@
 {
-  "greeting": "Hello world"
+  "greeting": "Hello world",
+  "homepage": {
+    "marketNeeds": "MARKET’S NEED",
+    "marketNeedsP1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "marketNeedsP2": "Ut enim ad minim veniam, quis nostu exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat quis nostu exercitation ullamco enim ad minim.",
+    "ourApproach": "OUR APPROACH",
+    "ourApproachP1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "ourApproachP2": "Ut enim ad minim veniam, quis nostu exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat quis nostu exercitation ullamco enim ad minim.",
+    "whyDifferent": "WHY WE ARE DIFFERENT",
+    "whyDifferentP1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "whyDifferentP2": "Ut enim ad minim veniam, quis nostu exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat quis nostu exercitation ullamco enim ad minim.",
+    "solutionIs": "SOLUTION IS",
+    "solutionIsP1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "solutionIsP2": "Ut enim ad minim veniam, quis nostu exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat quis nostu exercitation ullamco enim ad minim."
+  }
 }

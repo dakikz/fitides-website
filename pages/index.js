@@ -1,15 +1,18 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useRouter } from "next/router";
 import DefaultLayout from "../components/DefaultLayout";
 import styles from "../styles/Home.module.css";
 import useTranslation from "next-translate/useTranslation";
+import { FContainer, FContainerFluid, FSection } from "../elements/elements";
+import { colors } from "../config/genericStyles";
 import {
-  FContainer,
-  FleftSide,
-  FrightSide,
-  FSection,
-} from "../elements/elements";
+  HpGreekPitta,
+  HpHeroOpacity,
+  HpLogoEngraved,
+  HpNewspaper,
+  HpTrucks,
+} from "../config/images";
+import LeftTextRightImage from "../components/LeftTextRightImage";
+import RightTextLeftImage from "../components/RightTextLeftImage";
 
 export default function Home() {
   let { t } = useTranslation();
@@ -22,15 +25,47 @@ export default function Home() {
       </Head>
       <DefaultLayout>
         <main className={styles.main}>
-          <FSection>
-            <FContainer>
-              <FleftSide>
-                <h1 className={styles.title}>{t("common:greeting")}</h1>
-                <p>hello</p>
-              </FleftSide>
-              <FrightSide>Right Side</FrightSide>
-            </FContainer>
+          <FSection
+            bgColor={colors.black}
+            bgImage={HpHeroOpacity}
+            bgPosition="center"
+            bgSize="contain"
+            sectionMinHeight="600px"
+          >
+            <FContainer></FContainer>
           </FSection>
+          <FContainerFluid style={{ minHeight: "500px" }}>
+            <LeftTextRightImage
+              titleContent={t("common:homepage.marketNeeds")}
+              paragraphContent1={t("common:homepage.marketNeedsP1")}
+              paragraphContent2={t("common:homepage.marketNeedsP2")}
+              imageBg={HpTrucks}
+            />
+          </FContainerFluid>
+          <FContainerFluid style={{ minHeight: "500px" }}>
+            <RightTextLeftImage
+              titleContent={t("common:homepage.solutionIs")}
+              paragraphContent1={t("common:homepage.solutionIsP1")}
+              paragraphContent2={t("common:homepage.solutionIsP2")}
+              imageBg={HpGreekPitta}
+            />
+          </FContainerFluid>
+          <FContainerFluid style={{ minHeight: "500px" }}>
+            <LeftTextRightImage
+              titleContent={t("common:homepage.ourApproach")}
+              paragraphContent1={t("common:homepage.ourApproachP1")}
+              paragraphContent2={t("common:homepage.ourApproachP2")}
+              imageBg={HpLogoEngraved}
+            />
+          </FContainerFluid>
+          <FContainerFluid style={{ minHeight: "500px" }}>
+            <LeftTextRightImage
+              titleContent={t("common:homepage.whyDifferent")}
+              paragraphContent1={t("common:homepage.whyDifferentP1")}
+              paragraphContent2={t("common:homepage.whyDifferentP2")}
+              imageBg={HpNewspaper}
+            />
+          </FContainerFluid>
         </main>
       </DefaultLayout>
     </div>

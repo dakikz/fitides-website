@@ -1,1 +1,6 @@
-{ "greeting": "Geia sas" }
+{
+  "greeting": "Hello world GR",
+  "homepage": {
+    "marketNeeds": "MARKET’S NEED - GR"
+  }
+}

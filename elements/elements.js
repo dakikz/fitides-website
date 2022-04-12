@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { colors } from "../config/genericStyles";
 
 // Section component
 const Section = styled.div`
@@ -106,19 +107,112 @@ export const FContainer = ({
 const ContainerFluid = styled.div`
   max-width: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
 `;
 export const FContainerFluid = ({ children, style }) => {
   return <ContainerFluid style={style}>{children}</ContainerFluid>;
 };
 
+// TYPOGRAPHY
+// H1 & H2
+const H1Title = styled.h1`
+  font-size: ${({ fontsize }) => fontsize};
+  line-height: ${({ lineheight }) => lineheight};
+  color: ${({ color }) => color};
+  font-weight: ${({ fontweight }) => fontweight};
+  @media (max-width: 991px) {
+    font-size: ${({ fontsizeMob }) => fontsizeMob};
+    line-height: ${({ lineheightMob }) => lineheightMob};
+  }
+`;
+export const Fh1Title = ({
+  children,
+  color = colors.black,
+  fontsize = "50px",
+  lineheight = "55px",
+  fontsizeMob = "25px",
+  lineheightMob = "28px",
+  fontweight = "600",
+  style,
+  className,
+}) => {
+  return (
+    <H1Title
+      color={color}
+      fontsize={fontsize}
+      fontsizeMob={fontsizeMob}
+      lineheight={lineheight}
+      lineheightMob={lineheightMob}
+      fontweight={fontweight}
+      style={style}
+      className={className}
+    >
+      {children}
+    </H1Title>
+  );
+};
+
+const H2Title = styled.h2`
+  font-size: ${({ fontsize }) => fontsize};
+  line-height: ${({ lineheight }) => lineheight};
+  color: ${({ color }) => color};
+  font-weight: ${({ fontweight }) => fontweight};
+  text-align: ${({ textalign }) => textalign};
+  width: ${({ width }) => width};
+  @media (max-width: 991px) {
+    font-size: ${({ fontsizeMob }) => fontsizeMob};
+    line-height: ${({ lineheightMob }) => lineheightMob};
+    text-align: ${({ textalignmob }) => textalignmob};
+  }
+`;
+
+export const Fh2Title = ({
+  children,
+  color = colors.black,
+  fontsize = "45px",
+  fontsizeMob = "22px",
+  lineheightMob = "24px",
+  lineheight = "54px",
+  fontweight = "400",
+  textalign = "left",
+  textalignmob = "center",
+  width,
+  style,
+  className,
+}) => {
+  return (
+    <H2Title
+      color={color}
+      fontsize={fontsize}
+      fontsizeMob={fontsizeMob}
+      lineheightMob={lineheightMob}
+      lineheight={lineheight}
+      style={style}
+      fontweight={fontweight}
+      className={className}
+      textalign={textalign}
+      textalignmob={textalignmob}
+      width={width}
+    >
+      {children}
+    </H2Title>
+  );
+};
 // Paragraph component
 const Paragraph = styled.div`
   text-align: ${({ textalign }) => textalign};
   width: 100%;
+  color: ${({ color }) => color};
+  font-weight: 400;
+  line-height: 25px;
 `;
-export const FParagraph = ({ children, style, textalign }) => {
+export const FParagraph = ({ children, style, textalign, color }) => {
   return (
-    <Paragraph style={style} textalign={textalign}>
+    <Paragraph style={style} textalign={textalign} color={color}>
       {children}
     </Paragraph>
   );
@@ -148,12 +242,17 @@ const RightSideSection = styled.div`
   flex-direction: column;
   z-index: 2;
   position: relative;
+  justify-content: ${({ justifycontent }) => justifycontent};
   @media (min-width: 992px) {
     flex: 1;
   }
 `;
-export const FrightSide = ({ children, style }) => {
-  return <RightSideSection style={style}>{children}</RightSideSection>;
+export const FrightSide = ({ children, style, justifycontent }) => {
+  return (
+    <RightSideSection style={style} justifycontent={justifycontent}>
+      {children}
+    </RightSideSection>
+  );
 };
 
 // Image outer container

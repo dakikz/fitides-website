@@ -13,6 +13,9 @@ const NavbarOuter = styled.nav`
   height: ${heights.navbarHeight};
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 `;
 const NavbarInner = styled.div`
   display: flex;
