@@ -13,5 +13,19 @@
     "solutionIs": "SOLUTION IS",
     "solutionIsP1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "solutionIsP2": "Ut enim ad minim veniam, quis nostu exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat quis nostu exercitation ullamco enim ad minim."
+  },
+  "aboutPage": {
+    "profile": "PROFILE",
+    "profileP1": "Marios Fitides Bakery Ltd was founded in 1985 by Marios Fitides, the son of a known bread maker, with the aim to expand the family business and carry on his father’s legacy in bread making.",
+    "profileP2": "Over the years, the company has managed to build a strong reputation for high quality pitta bread, setting the stage for Fitides to become one of Cyprus’s premier pitta bakers.",
+    "profileP3": "Today, Fitides is one of the few remaining family operated businesses and largest producers of pitta bread in Cyprus, serving and providing fresh pittas to hundreds of retail shops, hotels, restaurants and caterers in Cyprus and abroad.",
+    "aboutP1": "Today, son and grandson carry on the family tradition handed down to them. Working side by side with the same passion and values, they’ve grown into one of the best producers of quality pitta bread, baked with the finest ingredients.",
+    "aboutP2": "Our love for baking bread is what we carry with us today with pride – a life’s work that goes beyond fond memories of a passionate bread maker serving fresh hot bread, right out of the oven of his small bakery shop back in the 1950s.",
+    "teamP1": "At Fitides, our passion and dedication into making quality pitta bread sets us apart. With generations of people having put a lot of love into it, today we have grown to be a team that holds the same values and drive for sharing what we do best.",
+    "story": "STORY",
+    "team": "TEAM",
+    "careers": "CAREERS",
+    "clients": "CLIENTS",
+    "certifications": "CERTIFICATIONS"
   }
 }

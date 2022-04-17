@@ -23,6 +23,7 @@ const LeftTextRightImage = ({
   titleContent,
   paragraphContent1,
   paragraphContent2,
+  paragraphContent3,
   imageBg,
   isButton,
 }) => {
@@ -42,7 +43,14 @@ const LeftTextRightImage = ({
           <FParagraph color={colors.brown} style={{ margin: "20px 0" }}>
             {paragraphContent1}
           </FParagraph>
-          <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
+          {paragraphContent2 && (
+            <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
+          )}
+          {paragraphContent3 && (
+            <FParagraph color={colors.brown} style={{ margin: "20px 0" }}>
+              {paragraphContent3}
+            </FParagraph>
+          )}
           {isButton && (
             <CTAsection>
               <FButtonBrown colorz={colors.brown} isButton={"Horeca"} />

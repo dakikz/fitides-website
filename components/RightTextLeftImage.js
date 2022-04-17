@@ -50,7 +50,9 @@ const RightTextLeftImage = ({
           <FParagraph color={colors.brown} style={{ margin: "20px 0" }}>
             {paragraphContent1}
           </FParagraph>
-          <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
+          {paragraphContent2 && (
+            <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
+          )}
         </FContainer>
       </FrightSide>
     </>
