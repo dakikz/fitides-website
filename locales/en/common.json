@@ -26,6 +26,8 @@
     "team": "TEAM",
     "careers": "CAREERS",
     "clients": "CLIENTS",
-    "certifications": "CERTIFICATIONS"
+    "certifications": "CERTIFICATIONS",
+    "certificationsP1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "certificationsP2": "Ut enim ad minim veniam, quis nostu exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat quis nostu exercitation ullamco enim ad minim."
   }
 }

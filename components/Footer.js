@@ -8,11 +8,11 @@ import { LogoBrown } from "../config/images";
 import { FContainer, FImageOuter } from "../elements/elements";
 
 const FooterOuter = styled.div`
-  background-color: ${colors.gold};
+  background-color: ${colors.red};
   padding-top: 50px;
   padding-bottom: 50px;
   & p {
-    color: ${colors.brown};
+    color: ${colors.white};
     width: 100%;
     text-align: center;
     font-weight: 500;
@@ -59,7 +59,7 @@ const Footer = () => {
             }}
           >
             <a target="_blank">
-              <FaInstagram color={colors.brown} size={"25px"} />
+              <FaInstagram color={colors.white} size={"25px"} />
             </a>
           </Link>
           <Link
@@ -68,7 +68,7 @@ const Footer = () => {
             }}
           >
             <a target="_blank">
-              <FaFacebookF color={colors.brown} size={"25px"} />
+              <FaFacebookF color={colors.white} size={"25px"} />
             </a>
           </Link>
         </div>

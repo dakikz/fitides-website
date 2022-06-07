@@ -6,6 +6,7 @@ import { FContainer, FContainerFluid, FSection } from "../elements/elements";
 import { colors } from "../config/genericStyles";
 import {
   AboutHero,
+  ContractPen,
   FitidesSign,
   HandsBaking,
   Handshake,
@@ -82,6 +83,16 @@ export default function About() {
               paragraphContent1={t("common:homepage.whyDifferentP1")}
               paragraphContent2={t("common:homepage.whyDifferentP2")}
               imageBg={Handshake}
+            />
+          </FContainerFluid>
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
+            <RightTextLeftImage
+              titleContent={t("common:aboutPage.certifications")}
+              paragraphContent1={t("common:aboutPage.certificationsP1")}
+              paragraphContent2={t("common:aboutPage.certificationsP2")}
+              imageBg={ContractPen}
             />
           </FContainerFluid>
         </main>

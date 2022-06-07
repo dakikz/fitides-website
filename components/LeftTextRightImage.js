@@ -11,6 +11,7 @@ import {
   FParagraph,
   FrightSide,
 } from "../elements/elements";
+import { StaxiImg } from "../config/images";
 
 const CTAsection = styled.div`
   width: 100%;
@@ -33,6 +34,7 @@ const LeftTextRightImage = ({
         <FContainer
           justifycontent="flex-start"
           style={{
+            position: "relative",
             maxWidth: "570px",
             width: "100%",
             marginRight: "0",
@@ -53,11 +55,31 @@ const LeftTextRightImage = ({
           )}
           {isButton && (
             <CTAsection>
-              <FButtonBrown colorz={colors.brown} isButton={"Horeca"} />
-              <FButtonBrown colorz={colors.gold} isButton={"Retail"} />
+              <FButtonBrown colorz={colors.red} isButton={"Horeca"} />
+              <FButtonBrown colorz={colors.lightGold} isButton={"Retail"} />
             </CTAsection>
           )}
         </FContainer>
+        <FImageOuter
+          imgWidth={"100%"}
+          imgHeight={"100%"}
+          imgHeightMob={"200px"}
+          style={{
+            maxWidth: "15px",
+            height: "40px",
+            position: "absolute",
+            right: "25px",
+            bottom: "30px",
+          }}
+        >
+          <Image
+            priority
+            objectFit="contain"
+            src={StaxiImg}
+            layout="fill"
+            alt={StaxiImg}
+          />
+        </FImageOuter>
       </FleftSide>
       <FrightSide>
         <FImageOuter

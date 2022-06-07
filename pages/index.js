@@ -63,7 +63,7 @@ export default function Home() {
               paragraphContent1={t("common:homepage.ourApproachP1")}
               paragraphContent2={t("common:homepage.ourApproachP2")}
               imageBg={HpLogoEngraved}
-              isButton={"nai button"}
+              isButton
             />
           </FContainerFluid>
           <FContainerFluid

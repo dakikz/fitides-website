@@ -163,6 +163,7 @@ const H2Title = styled.h2`
   font-weight: ${({ fontweight }) => fontweight};
   text-align: ${({ textalign }) => textalign};
   width: ${({ width }) => width};
+  letter-spacing: 7px;
   @media (max-width: 991px) {
     font-size: ${({ fontsizeMob }) => fontsizeMob};
     line-height: ${({ lineheightMob }) => lineheightMob};
@@ -177,7 +178,7 @@ export const Fh2Title = ({
   fontsizeMob = "22px",
   lineheightMob = "24px",
   lineheight = "54px",
-  fontweight = "400",
+  fontweight = "300",
   textalign = "left",
   textalignmob = "center",
   width,
@@ -225,6 +226,7 @@ const LeftSideSection = styled.div`
   z-index: 2;
   position: relative;
   justify-content: center;
+  background-color: #ebe8e3;
   @media (min-width: 992px) {
     flex: 1;
   }
@@ -242,6 +244,8 @@ const RightSideSection = styled.div`
   flex-direction: column;
   z-index: 2;
   position: relative;
+  background-color: #ebe8e3;
+
   justify-content: ${({ justifycontent }) => justifycontent};
   @media (min-width: 992px) {
     flex: 1;
@@ -269,7 +273,7 @@ const Button = styled.div`
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    background-color: ${colors.white};
+    background-color: ${colors.transparent};
     color: ${({ colorz }) => colorz};
   }
 `;

@@ -8,7 +8,7 @@ import { LogoGold } from "../config/images";
 import { FImageOuter } from "../elements/elements";
 
 const NavbarOuter = styled.nav`
-  background-color: ${colors.black};
+  background-color: ${colors.red};
   height: ${heights.navbarHeight};
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ const NavbarOuter = styled.nav`
   }
 `;
 const CloseMobMenu = styled.div`
-  color: ${colors.brown};
+  color: ${colors.white};
   position: absolute;
   top: 0;
   right: 0;
@@ -33,7 +33,7 @@ const NavbarInner = styled.div`
   max-width: 1140px;
   margin: auto;
   padding: 0 15px;
-  background-color: ${colors.black};
+  background-color: ${colors.red};
   @media (max-width: 991px) {
     width: 100%;
     position: fixed;
@@ -48,7 +48,7 @@ const NavLinks = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
-  color: ${colors.gold};
+  color: ${colors.white};
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 500;
@@ -65,7 +65,7 @@ const NavLinks = styled.div`
     transition: all 0.3s ease;
   }
   & .hi:hover {
-    border-bottom: 1px solid ${colors.gold};
+    border-bottom: 1px solid ${colors.white};
   }
 `;
 const LangUl = styled.ul`
@@ -76,7 +76,7 @@ const LangUl = styled.ul`
 `;
 const LangLi = styled.li`
   text-transform: uppercase;
-  color: ${colors.gold};
+  color: ${colors.white};
 `;
 const Navbar = ({ navItems }) => {
   const [isMobMenuOpen, setIsMobMenuOpen] = useState(false);
