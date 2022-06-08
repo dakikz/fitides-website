@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { colors } from "../config/genericStyles";
-import { LogoBrown } from "../config/images";
+import { LogoBrown, LogoWhite } from "../config/images";
 import { FContainer, FImageOuter } from "../elements/elements";
 
 const FooterOuter = styled.div`
@@ -25,6 +25,7 @@ const Footer = () => {
       <FContainer
         style={{
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Link href="/">
@@ -37,7 +38,7 @@ const Footer = () => {
               <Image
                 priority
                 objectFit="contain"
-                src={LogoBrown}
+                src={LogoWhite}
                 layout="fill"
                 alt="Fitides Logo Gold"
               />
@@ -52,7 +53,7 @@ const Footer = () => {
           3 Rodionos K. Riga CY-4101, INDUSTRIAL AREA AGIOS ATHANASIOS, LIMASSOL
         </p>
         <p>P.O.BOX 55231-3820 LIMASSOL</p>
-        <div style={{ marginTop: "20px", display: "flex", gap: "5px" }}>
+        <div style={{ margin: "20px auto 10px", display: "flex", gap: "5px" }}>
           <Link
             href={{
               pathname: "https://www.instagram.com/fitides__pittabread/",

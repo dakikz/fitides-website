@@ -18,6 +18,9 @@ const CTAsection = styled.div`
   margin-top: 20px;
   display: flex;
   gap: 10px;
+  @media (max-width: 991px) {
+    justify-content: center;
+  }
 `;
 
 const LeftTextRightImage = ({

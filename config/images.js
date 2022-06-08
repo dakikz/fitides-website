@@ -1,5 +1,6 @@
 export const LogoGold = "/images/logo.svg";
 export const LogoBrown = "/images/logo-brown.svg";
+export const LogoWhite = "/images/logo-white.svg";
 
 // Homepage
 export const HpHero = "/images/hp-hero.jpg";

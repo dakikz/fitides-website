@@ -26,6 +26,7 @@ const Section = styled.div`
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 0 !important;
+    min-height: ${({ sectionminheightmob }) => sectionminheightmob};
   }
 `;
 export const FSection = ({
@@ -39,6 +40,7 @@ export const FSection = ({
   bgRepeat = "no-repeat",
   sectionHeight,
   sectionMinHeight,
+  sectionMinHeightMob,
   bRadius,
   overflow,
   bg = "",
@@ -56,6 +58,7 @@ export const FSection = ({
       bgrepeat={bgRepeat}
       sectionheight={sectionHeight}
       sectionminheight={sectionMinHeight}
+      sectionminheightmob={sectionMinHeightMob}
       bradius={bRadius}
       overflow={overflow}
       bg={bg}
@@ -80,6 +83,9 @@ const Container = styled.div`
   align-items: ${({ alignitems }) => alignitems};
   @media (max-width: 991px) {
     flex-direction: column;
+    padding: 35px 15px 55px !important;
+    margin: auto !important;
+    min-height: auto;
   }
 `;
 export const FContainer = ({
@@ -111,6 +117,7 @@ const ContainerFluid = styled.div`
   flex-direction: row;
   @media (max-width: 991px) {
     flex-direction: column;
+    min-height: auto !important;
   }
 `;
 export const FContainerFluid = ({ children, style }) => {

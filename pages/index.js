@@ -32,6 +32,7 @@ export default function Home() {
             bgPosition="center"
             bgSize="contain"
             sectionMinHeight="600px"
+            sectionMinHeightMob="300px"
           >
             <FContainer></FContainer>
           </FSection>

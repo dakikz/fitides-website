@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styled from "styled-components";
 import { colors } from "../config/genericStyles";
 import { StaxiImg } from "../config/images";
 import {
@@ -11,6 +12,15 @@ import {
   FrightSide,
 } from "../elements/elements";
 
+const Outer = styled.div`
+  display: flex;
+  width: 100%;
+  @media (max-width: 991px) {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+`;
 const RightTextLeftImage = ({
   titleContent,
   paragraphContent1,
@@ -18,7 +28,7 @@ const RightTextLeftImage = ({
   imageBg,
 }) => {
   return (
-    <>
+    <Outer>
       <FleftSide>
         <FImageOuter
           imgWidth={"100%"}
@@ -76,7 +86,7 @@ const RightTextLeftImage = ({
           />
         </FImageOuter>
       </FrightSide>
-    </>
+    </Outer>
   );
 };
 

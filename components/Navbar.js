@@ -4,8 +4,9 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { colors, heights } from "../config/genericStyles";
-import { LogoGold } from "../config/images";
+import { LogoGold, LogoWhite } from "../config/images";
 import { FImageOuter } from "../elements/elements";
+import { useWindowSize } from "../util/fHooks";
 
 const NavbarOuter = styled.nav`
   background-color: ${colors.red};
@@ -16,15 +17,10 @@ const NavbarOuter = styled.nav`
   top: 0;
   z-index: 99;
   @media (max-width: 991px) {
-    height: 100vh;
+    /* height: ${heights.navbarHeight}; */
   }
 `;
-const CloseMobMenu = styled.div`
-  color: ${colors.white};
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
+
 const NavbarInner = styled.div`
   display: flex;
   justify-content: space-between;
@@ -36,13 +32,49 @@ const NavbarInner = styled.div`
   background-color: ${colors.red};
   @media (max-width: 991px) {
     width: 100%;
-    position: fixed;
     flex-direction: column;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
     height: 100%;
   }
 `;
+const LeftSide = styled.div`
+  max-width: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 991px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
+
+const RightSide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  width: 100%;
+  @media (max-width: 991px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: ${heights.navbarHeight};
+    left: -100%;
+    transition: all 0.3s ease;
+    background-color: ${colors.red};
+    max-width: 100%;
+    height: calc(100vh - ${heights.navbarHeight});
+    &.navOpen {
+      left: 0;
+    }
+  }
+`;
+
 const NavLinks = styled.div`
   display: flex;
   justify-content: space-between;
@@ -78,48 +110,96 @@ const LangLi = styled.li`
   text-transform: uppercase;
   color: ${colors.white};
 `;
+
+const CloseMobMenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  color: ${colors.white};
+  position: absolute;
+  right: 20px;
+  transform: translateY(calc (50% - 30px));
+  height: 24px;
+  & span {
+    display: block;
+    border: 1px solid ${colors.white};
+    width: 40px;
+    height: 4px;
+    background-color: ${colors.white};
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+  &.active {
+    & span:first-child {
+      transform: rotate(135deg) translateY(-7px) translateX(9px);
+    }
+    & span:nth-child(2) {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    & span:last-child {
+      transform: rotate(-135deg) translateY(5px) translateX(6px);
+    }
+  }
+`;
+
 const Navbar = ({ navItems }) => {
   const [isMobMenuOpen, setIsMobMenuOpen] = useState(false);
   let router = useRouter();
+  const { width } = useWindowSize();
 
   return (
-    <NavbarOuter className={isMobMenuOpen ? "aaaaa" : ""}>
-      <CloseMobMenu onClick={() => setIsMobMenuOpen(false)}>X</CloseMobMenu>
+    <NavbarOuter>
+      {width < 991 && (
+        <CloseMobMenu
+          onClick={() => setIsMobMenuOpen(!isMobMenuOpen)}
+          className={isMobMenuOpen ? "active" : ""}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </CloseMobMenu>
+      )}
       <NavbarInner>
-        <Link href="/">
-          <a>
-            <FImageOuter
-              imgWidth={"130px"}
-              imgHeight={"60px"}
-              whichCursor={"pointer"}
-            >
-              <Image
-                priority
-                objectFit="contain"
-                src={LogoGold}
-                layout="fill"
-                alt="Fitides Logo Gold"
-              />
-            </FImageOuter>
-          </a>
-        </Link>
-        <NavLinks>
-          {navItems.map((item, idx) => (
-            <Link href={item.pageUrl} key={idx}>
-              <a className="hi">{item.pageName}</a>
-            </Link>
-          ))}
-        </NavLinks>
-
-        <LangUl>
-          {router.locales.map((locale) => (
-            <LangLi key={locale}>
-              <Link href={router.asPath} locale={locale}>
-                <a>{locale}</a>
+        <LeftSide>
+          <Link href="/">
+            <a>
+              <FImageOuter
+                imgWidth={"130px"}
+                imgHeight={"60px"}
+                whichCursor={"pointer"}
+              >
+                <Image
+                  priority
+                  objectFit="contain"
+                  src={LogoWhite}
+                  layout="fill"
+                  alt="Fitides Logo Gold"
+                />
+              </FImageOuter>
+            </a>
+          </Link>
+        </LeftSide>
+        <RightSide className={isMobMenuOpen ? "navOpen" : ""}>
+          <NavLinks>
+            {navItems.map((item, idx) => (
+              <Link href={item.pageUrl} key={idx}>
+                <a className="hi">{item.pageName}</a>
               </Link>
-            </LangLi>
-          ))}
-        </LangUl>
+            ))}
+          </NavLinks>
+
+          <LangUl>
+            {router.locales.map((locale) => (
+              <LangLi key={locale}>
+                <Link href={router.asPath} locale={locale}>
+                  <a>{locale}</a>
+                </Link>
+              </LangLi>
+            ))}
+          </LangUl>
+        </RightSide>
       </NavbarInner>
     </NavbarOuter>
   );
