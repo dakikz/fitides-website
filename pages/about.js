@@ -36,6 +36,18 @@ export default function About() {
           >
             <FContainer></FContainer>
           </FSection>
+
+          <FContainerFluid
+            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
+          >
+            <RightTextLeftImage
+              titleContent={t("common:aboutPage.story")}
+              paragraphContent1={t("common:aboutPage.storyP1")}
+              paragraphContent2={t("common:aboutPage.storyP2")}
+              imageBg={PappousBaking}
+            />
+          </FContainerFluid>
+
           <FContainerFluid
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
@@ -43,46 +55,26 @@ export default function About() {
               titleContent={t("common:aboutPage.profile")}
               paragraphContent1={t("common:aboutPage.profileP1")}
               paragraphContent2={t("common:aboutPage.profileP2")}
-              paragraphContent3={t("common:aboutPage.profileP3")}
-              imageBg={PappousBaking}
+              imageBg={FitidesSign}
             />
           </FContainerFluid>
+
           <FContainerFluid
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
             <RightTextLeftImage
-              titleContent={t("common:aboutPage.story")}
-              paragraphContent1={t("common:aboutPage.aboutP1")}
-              paragraphContent2={t("common:aboutPage.aboutP2")}
-              imageBg={FitidesSign}
-            />
-          </FContainerFluid>
-          <FContainerFluid
-            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
-          >
-            <LeftTextRightImage
               titleContent={t("common:aboutPage.team")}
               paragraphContent1={t("common:aboutPage.teamP1")}
               imageBg={PappousBaking}
             />
           </FContainerFluid>
-          <FContainerFluid
-            style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
-          >
-            <RightTextLeftImage
-              titleContent={t("common:aboutPage.careers")}
-              paragraphContent1={t("common:homepage.solutionIsP1")}
-              paragraphContent2={t("common:homepage.solutionIsP2")}
-              imageBg={HandsBaking}
-            />
-          </FContainerFluid>
+
           <FContainerFluid
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
             <LeftTextRightImage
               titleContent={t("common:aboutPage.clients")}
-              paragraphContent1={t("common:homepage.whyDifferentP1")}
-              paragraphContent2={t("common:homepage.whyDifferentP2")}
+              paragraphContent1={t("common:aboutPage.clientsP1")}
               imageBg={Handshake}
             />
           </FContainerFluid>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../config/genericStyles";
+import Link from "next/link";
 
 // Section component
 const Section = styled.div`
@@ -284,8 +285,12 @@ const Button = styled.div`
     color: ${({ colorz }) => colorz};
   }
 `;
-export const FButtonBrown = ({ isButton, colorz }) => {
-  return <Button colorz={colorz}>{isButton}</Button>;
+export const FButtonBrown = ({ isButton, colorz, hrefz }) => {
+  return (
+    <Link href={hrefz}>
+      <Button colorz={colorz}>{isButton}</Button>
+    </Link>
+  );
 };
 
 // Image outer container

@@ -4,19 +4,14 @@ import styles from "../styles/Home.module.css";
 import useTranslation from "next-translate/useTranslation";
 import { FContainer, FContainerFluid, FSection } from "../elements/elements";
 import { colors } from "../config/genericStyles";
-import {
-  HpCocktailPitta,
-  HpGreekPitta,
-  HpHeroOpacity,
-  HpLogoEngraved,
-  HpNewspaper,
-  HpTrucks,
-} from "../config/images";
+import { AboutHero } from "../config/images";
 import LeftTextRightImage from "../components/LeftTextRightImage";
 import RightTextLeftImage from "../components/RightTextLeftImage";
+import Link from "next/link";
 
-export default function Home() {
+const products = () => {
   let { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +23,7 @@ export default function Home() {
         <main className={styles.main}>
           <FSection
             bgColor={colors.black}
-            bgImage={HpHeroOpacity}
+            bgImage={AboutHero}
             bgPosition="center"
             bgSize="contain"
             sectionMinHeight="600px"
@@ -36,14 +31,16 @@ export default function Home() {
           >
             <FContainer></FContainer>
           </FSection>
+
           <FContainerFluid
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
             <LeftTextRightImage
-              titleContent={t("common:homepage.marketNeeds")}
-              paragraphContent1={t("common:homepage.marketNeedsP1")}
-              // paragraphContent2={t("common:homepage.marketNeedsP2")}
-              imageBg={HpTrucks}
+              titleContent={t("common:products.lebanese")}
+              paragraphContent1={t("common:products.lebaneseP1")}
+              imageBg={AboutHero}
+              uppercasez
+              hasLink={"/products/lebanese"}
             />
           </FContainerFluid>
 
@@ -51,33 +48,41 @@ export default function Home() {
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
             <RightTextLeftImage
-              titleContent={t("common:homepage.ourApproach")}
-              paragraphContent1={t("common:homepage.ourApproachP1")}
-              // isButton
-              imageBg={HpCocktailPitta}
+              titleContent={t("common:products.classic")}
+              paragraphContent1={t("common:products.classicP1")}
+              imageBg={AboutHero}
+              uppercasez
+              hasLink={"/products/classic"}
             />
           </FContainerFluid>
+
           <FContainerFluid
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
             <LeftTextRightImage
-              titleContent={t("common:homepage.solutionIs")}
-              paragraphContent1={t("common:homepage.solutionIsP1")}
-              imageBg={HpLogoEngraved}
+              titleContent={t("common:products.wholeWheat")}
+              paragraphContent1={t("common:products.wholeWheatP1")}
+              imageBg={AboutHero}
+              uppercasez
+              hasLink={"/products/wholewheat"}
             />
           </FContainerFluid>
+
           <FContainerFluid
             style={{ minHeight: "550px", backgroundColor: "#f9f6f4" }}
           >
             <RightTextLeftImage
-              titleContent={t("common:homepage.products")}
-              paragraphContent1={t("common:homepage.productsP1")}
-              imageBg={HpGreekPitta}
-              isButton={true}
+              titleContent={t("common:products.greek")}
+              paragraphContent1={t("common:products.greekP1")}
+              imageBg={AboutHero}
+              uppercasez
+              hasLink={"/products/greek"}
             />
           </FContainerFluid>
         </main>
       </DefaultLayout>
     </div>
   );
-}
+};
+
+export default products;

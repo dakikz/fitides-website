@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { colors } from "../config/genericStyles";
 import { StaxiImg } from "../config/images";
 import {
+  FButtonBrown,
   FContainer,
   Fh2Title,
   FImageOuter,
@@ -11,13 +12,24 @@ import {
   FParagraph,
   FrightSide,
 } from "../elements/elements";
+import Link from "next/link";
+
+const CTAsection = styled.div`
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  @media (max-width: 991px) {
+    justify-content: center;
+  }
+`;
 
 const Outer = styled.div`
   display: flex;
   width: 100%;
   @media (max-width: 991px) {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
   }
 `;
@@ -26,6 +38,9 @@ const RightTextLeftImage = ({
   paragraphContent1,
   paragraphContent2,
   imageBg,
+  isButton,
+  uppercasez,
+  hasLink,
 }) => {
   return (
     <Outer>
@@ -57,12 +72,36 @@ const RightTextLeftImage = ({
             paddingLeft: "100px",
           }}
         >
-          <Fh2Title color={colors.brown}>{titleContent}</Fh2Title>
+          <Fh2Title
+            style={{ textTransform: uppercasez ? "uppercase" : "" }}
+            color={colors.brown}
+          >
+            {titleContent}
+          </Fh2Title>
           <FParagraph color={colors.brown} style={{ margin: "20px 0" }}>
             {paragraphContent1}
           </FParagraph>
           {paragraphContent2 && (
             <FParagraph color={colors.brown}>{paragraphContent2}</FParagraph>
+          )}
+          {isButton && (
+            <CTAsection>
+              <FButtonBrown
+                hrefz={"/products"}
+                colorz={colors.red}
+                isButton={"Horeca"}
+              />
+              <FButtonBrown
+                hrefz={"/products"}
+                colorz={colors.lightGold}
+                isButton={"Retail"}
+              />
+            </CTAsection>
+          )}
+          {hasLink && (
+            <Link style={{ color: "red" }} href={hasLink}>
+              <p style={{ color: colors.red, cursor: "pointer" }}>Read More</p>
+            </Link>
           )}
         </FContainer>
         <FImageOuter

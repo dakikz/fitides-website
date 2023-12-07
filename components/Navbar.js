@@ -77,10 +77,11 @@ const RightSide = styled.div`
 
 const NavLinks = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   width: 100%;
   max-width: 500px;
-  color: ${colors.white};
+  color: ${colors.gray1};
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 500;
@@ -108,7 +109,7 @@ const LangUl = styled.ul`
 `;
 const LangLi = styled.li`
   text-transform: uppercase;
-  color: ${colors.white};
+  color: ${colors.gray1};
 `;
 
 const CloseMobMenu = styled.div`

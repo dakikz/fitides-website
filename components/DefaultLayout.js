@@ -17,14 +17,6 @@ const DefaultLayout = ({ children }) => {
       pageUrl: "/exports",
     },
     {
-      pageName: "Receipes",
-      pageUrl: "/receipes",
-    },
-    {
-      pageName: "News",
-      pageUrl: "/news",
-    },
-    {
       pageName: "Contact",
       pageUrl: "/contact",
     },

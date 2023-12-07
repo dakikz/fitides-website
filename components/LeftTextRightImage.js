@@ -12,7 +12,17 @@ import {
   FrightSide,
 } from "../elements/elements";
 import { StaxiImg } from "../config/images";
+import Link from "next/link";
 
+const Outer = styled.div`
+  display: flex;
+  width: 100%;
+  @media (max-width: 991px) {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+`;
 const CTAsection = styled.div`
   width: 100%;
   margin-top: 20px;
@@ -30,9 +40,11 @@ const LeftTextRightImage = ({
   paragraphContent3,
   imageBg,
   isButton,
+  uppercasez,
+  hasLink,
 }) => {
   return (
-    <>
+    <Outer>
       <FleftSide>
         <FContainer
           justifycontent="flex-start"
@@ -44,7 +56,12 @@ const LeftTextRightImage = ({
             paddingRight: "100px",
           }}
         >
-          <Fh2Title color={colors.brown}>{titleContent}</Fh2Title>
+          <Fh2Title
+            style={{ textTransform: uppercasez ? "uppercase" : "" }}
+            color={colors.brown}
+          >
+            {titleContent}
+          </Fh2Title>
           <FParagraph color={colors.brown} style={{ margin: "20px 0" }}>
             {paragraphContent1}
           </FParagraph>
@@ -61,6 +78,11 @@ const LeftTextRightImage = ({
               <FButtonBrown colorz={colors.red} isButton={"Horeca"} />
               <FButtonBrown colorz={colors.lightGold} isButton={"Retail"} />
             </CTAsection>
+          )}
+          {hasLink && (
+            <Link style={{ color: "red" }} href={hasLink}>
+              <p style={{ color: colors.red, cursor: "pointer" }}>Read More</p>
+            </Link>
           )}
         </FContainer>
         <FImageOuter
@@ -102,7 +124,7 @@ const LeftTextRightImage = ({
           />
         </FImageOuter>
       </FrightSide>
-    </>
+    </Outer>
   );
 };
 
