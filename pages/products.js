@@ -7,9 +7,8 @@ import { colors } from "../config/genericStyles";
 import { AboutHero } from "../config/images";
 import LeftTextRightImage from "../components/LeftTextRightImage";
 import RightTextLeftImage from "../components/RightTextLeftImage";
-import Link from "next/link";
 
-const products = () => {
+export default function Products() {
   let { t } = useTranslation();
 
   return (
@@ -83,6 +82,4 @@ const products = () => {
       </DefaultLayout>
     </div>
   );
-};
-
-export default products;
+}
